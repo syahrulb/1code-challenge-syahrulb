@@ -7,11 +7,11 @@ const FontOutline = ({item}) => {
     const {model ='', judul, icon : Icon}  = item;
     if (model =='fontawesome') {
         return  <Grid item sm={4}>                     
-                    <Chip label={judul} variant="outlined" icon={ <FontAwesomeIcon icon={['fas', Icon ]} /> } />
+                    <Chip sx={{ p:1.5 }} label={judul} variant="outlined" icon={ <FontAwesomeIcon icon={['fas', Icon ]} /> } />
                 </Grid>;
     } else {
         return  <Grid item sm={4}>                     
-                    <Chip label={judul} variant="outlined" icon={<Icon />} />
+                    <Chip sx={{ p:1.5 }} label={judul} variant="outlined" icon={<Icon />} />
                 </Grid>;
     }
 }

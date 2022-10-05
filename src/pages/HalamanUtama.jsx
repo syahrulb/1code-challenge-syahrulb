@@ -15,14 +15,17 @@ import TabList from '@mui/lab/TabList';
 import TabPanel from '@mui/lab/TabPanel';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import Paper from '@mui/material/Paper';
+import Stack from '@mui/material/Stack';
 import bigImage from "../assets/image/photos/big.png";
 import miniSatuImage from "../assets/image/photos/mini-1.png";
 import miniDuaImage from "../assets/image/photos/mini-2.png";
 import miniTigaImage from "../assets/image/photos/mini-3.png";
 import ImageListItemBar from '@mui/material/ImageListItemBar';
-// import Button from '@mui/material/Button';
-import IconButton from '@mui/material/IconButton';
-import StarBorderIcon from '@mui/icons-material/StarBorder';
+import Button from '@mui/material/Button';
+import AppsIcon from '@mui/icons-material/Apps';
+import { teal } from '@mui/material/colors';
+
 
 function srcset(image, width, height, rows = 1, cols = 1) {
     return {
@@ -50,7 +53,7 @@ function HalamanUtama() {
                 <TabContext value={value}>
                     <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
                     <TabList onChange={handleChange} aria-label="lab API tabs example">
-                        <Tab label="Hotel OverView" value="hotel-overview" />
+                        <Tab sx={{color : teal[500]}} label="Hotel OverView" value="hotel-overview" />
                         <Tab label="Service" value="service" />
                         <Tab label="Photo" value="photo" />
                         <Tab label="Rating" value="rating" />
@@ -106,7 +109,7 @@ function HalamanUtama() {
                                 sx={{ width: '100%', height: '450px', transform: 'translateZ(0)', }}
                                 variant="quilted"
                                 cols={4}
-                                gap={1}
+                                gap={6}
                                 // rowHeight={121}
                                 >
                                     <ImageListItem cols={2} rows={2}>
@@ -144,25 +147,36 @@ function HalamanUtama() {
                                             loading="lazy"
                                         />
                                         <ImageListItemBar
-                                        sx={{
-                                            background:
-                                            'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
-                                            'rgba(0,0,0,0.3) 70%, rgba(0,0,0,0) 100%)',
-                                        }}
-                                        title="item"
-                                        position="buttom"
-                                        actionPosition="right"
-                                        actionIcon={
-                                            <IconButton
-                                              sx={{ color: 'white' }}
-                                              aria-label={`star woe`}
-                                            >
-                                              <StarBorderIcon />
-                                            </IconButton>
-                                          }
-                                        />
+                                            sx={{
+                                                background:
+                                                'linear-gradient(to bottom, rgba(0,0,0,0.7) 0%, ' +
+                                                'rgba(0,0,0,0.3) 0%, rgba(0,0,0,0) 0%)',
+                                            }}
+                                            title=""
+                                            position="bottom"
+                                            actionPosition="right"
+                                            actionIcon={
+                                                <Button variant="outlined" sx={{ background:"white", color : "black", border:"black", mr: 1, mb : 1 }}>
+                                                    <AppsIcon /> <span>View More Photo</span> 
+                                                </Button>
+                                                }
+                                            />
                                     </ImageListItem>
                                 </ImageList>
+                            </Grid>
+                            <Grid item sm={8}  lg={8}>
+                                <Typography variant="h5" sx={{my : 1}} >
+                                    Ratings
+                                </Typography>
+                                <Stack direction="row"
+                                    justifyContent="flex-start"
+                                    alignItems="flex-start"
+                                    spacing={2}>
+                                    <Paper sx={{ width: "40%" }} >asd</Paper>
+                                    <Paper sx={{ width: "60%" }} >asd</Paper>
+                                </Stack>
+                            </Grid>
+                            <Grid item sm={4}  lg={4}>
                             </Grid>
                         </Grid>    
                     </TabPanel>
